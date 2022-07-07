@@ -17,8 +17,8 @@ class Activity_edit_note : AppCompatActivity() {
         val note1:String=intent.getStringExtra("note1")!!
         Toast.makeText(this, note1, Toast.LENGTH_SHORT).show()
         val mediaPlayer: MediaPlayer = MediaPlayer.create(this,R.raw.bikalam)
-        val edt_note1:EditText=findViewById(R.id.edt_note)
-        val number:EditText=findViewById(R.id.edt_name)
+        val edt_note1:EditText=findViewById(R.id.edt_note2)
+        val number:EditText=findViewById(R.id.edt_note1)
         val btn_edit:Button=findViewById(R.id.btn_edit)
         val btn_close:Button=findViewById(R.id.btn_close)
         val db = AppDatabase(this)

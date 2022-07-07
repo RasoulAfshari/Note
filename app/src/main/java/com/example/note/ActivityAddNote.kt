@@ -12,7 +12,7 @@ class ActivityAddNote : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_note)
 
-        val note1: EditText =findViewById(R.id.edt_note)
+        val note1: EditText =findViewById(R.id.edt_note2)
         val name: TextView =findViewById(R.id.textname)
         val btn_save: Button =findViewById(R.id.btn_edit)
         val btn_close: Button =findViewById(R.id.btn_close)

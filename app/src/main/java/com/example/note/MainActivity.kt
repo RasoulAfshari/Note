@@ -13,22 +13,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val note1:EditText=findViewById(R.id.edt_note)
-        val number:EditText=findViewById(R.id.edt_name)
+        val note2:EditText=findViewById(R.id.edt_note2)
+        val note1:EditText=findViewById(R.id.edt_note1)
         val btn_save:Button=findViewById(R.id.btn_edit)
         val btn_close:Button=findViewById(R.id.btn_close)
         val mediaPlayer: MediaPlayer = MediaPlayer.create(this,R.raw.bikalam)
 
         btn_save.setOnClickListener {
             mediaPlayer.start()
-            if(note1.text.toString()=="" || number.text.toString()==""){
+            if( note1.text.toString()==""){
                 Toast.makeText(this, "فیلد ها نباید خالی باشد", Toast.LENGTH_SHORT).show()
             }
             else{
                 val db = AppDatabase(this)
                 var existnote = db.noteDao().findBynote1(note1.text.toString())
                 if(existnote==null){
-                    var n:note=note(note1.text.toString(),number.text.toString())
+                    var n:note=note(note1.text.toString(),note1.text.toString())
                     db.noteDao().insertAll(n)
                     Toast.makeText(this, "ثبت با موفقیت انجام شد", Toast.LENGTH_SHORT).show()
                 }
